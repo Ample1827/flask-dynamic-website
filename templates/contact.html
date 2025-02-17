@@ -1,18 +1,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users</title>
+    <title>Contact</title>
 </head>
 <body>
-    <h1>Add New User</h1>
+    <h1>Contact Us</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
         <label for="name">Name:</label>
         {{ form.name(class_='form-control') }}
         <label for="email">Email:</label>
         {{ form.email(class_='form-control') }}
-        <button type="submit">Add User</button>
+        <label for="message">Message:</label>
+        {{ form.message(class_='form-control') }}
+        <button type="submit">Send Message</button>
     </form>
 </body>
 </html>

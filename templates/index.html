@@ -1,39 +1,15 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <title>Home</title>
 </head>
 <body>
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
-  
-  <main>
-    <h2>User List</h2>
+    <h1>Welcome to My Dynamic Website</h1>
     <ul>
-      {% for user in users %}
-        <li>
-          {{ user.name }} - {{ user.email }} 
-          <a href="{{ url_for('edit_user', user_id=user.id) }}">Edit</a>
-        </li>
-      {% endfor %}
+        {% for user in users %}
+        <li>{{ user.name }} - {{ user.email }} <a href="{{ url_for('edit_user', user_id=user.id) }}">Edit</a></li>
+        {% endfor %}
     </ul>
-
-    <h2>Add User</h2>
-    <form method="POST" action="{{ url_for('add_user') }}">
-      {{ form.hidden_tag() }}
-      <label for="name">Name:</label>
-      {{ form.name }}
-      <label for="email">Email:</label>
-      {{ form.email }}
-      <button type="submit">Add User</button>
-    </form>
-  </main>
-
-  <footer>
-    <p>&copy; {{ 2025 }} My Dynamic Website</p>
-  </footer>
+    <a href="{{ url_for('add_user') }}">Add New User</a>
 </body>
 </html>
