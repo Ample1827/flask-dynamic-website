@@ -1,0 +1,6 @@
+<form method="POST">
+    {{ form.hidden_tag() }}  <!-- Required for CSRF protection -->
+    <p>{{ form.name.label }} {{ form.name() }}</p>
+    <p>{{ form.email.label }} {{ form.email() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
